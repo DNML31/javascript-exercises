@@ -1,33 +1,21 @@
 const palindromes = function (word) {
 
-    let lowerCase = word.toLowerCase();
-    let toArray = Array.from(lowerCase);
-    //delete punctuation here
-    let rev = [...lowerCase].reverse();
+  let lowerCase = word.toLowerCase();
   
-    // const onlyLetters = (function(element) {
-    //   if(element !== '.' || element !== ',' || element !== '!') {
-    //     return true;
-    //   }
-    // })
-
-    // rev.filter(onlyLetters);
-
-
-
-      const mapWord = rev.map(function (element) {
-          if (element === '.' || element === ',' || element === '!') {
-            delete rev.element;
-            // the punctuations are not being deleted
-          }
-      });
+  // const regex = RegExp[/.,!/g]; //object
+  let punct = lowerCase.replace('!', '');
   
-      if(rev.toString() === toArray.toString()) {
-          return true;
-      } else if (rev.toString() !== toArray.toString()) {
-          return false;
-      }
-  };
+  console.log(punct);
+  
+  let toArray = Array.from(punct);
+  let rev = [...toArray].reverse();
+  
+  if(toArray.toString() === rev.toString()) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 //PUNCTUATION AND CAPITALIZATION SHOULD BE DISREGARDED
 //spaces?
