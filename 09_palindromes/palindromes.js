@@ -1,7 +1,7 @@
 const palindromes = function (word) {
 
   let lowerCase = word.toLowerCase(); //string lowercase
-  let noPunct = lowerCase.replace(/[,.!]/g, ''); // erases .,!
+  let noPunct = lowerCase.replace(/[\s,.!]/g, ''); // erases .,!
   let toArray = Array.from(noPunct); //lowercase array no puncts
 
   let rev = [...toArray].reverse(); //lowercase array no puncts reversed
