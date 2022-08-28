@@ -1,16 +1,12 @@
 const palindromes = function (word) {
 
-  let lowerCase = word.toLowerCase();
+  let lowerCase = word.toLowerCase(); //string lowercase
+  let noPunct = lowerCase.replace(/[,.!]/g, ''); // erases .,!
+  let toArray = Array.from(noPunct); //lowercase array no puncts
+
+  let rev = [...toArray].reverse(); //lowercase array no puncts reversed
   
-  // const regex = RegExp[/.,!/g]; //object
-  let punct = lowerCase.replace('!', '');
-  
-  console.log(punct);
-  
-  let toArray = Array.from(punct);
-  let rev = [...toArray].reverse();
-  
-  if(toArray.toString() === rev.toString()) {
+  if(rev.toString() === toArray.toString()) {
     return true;
   } else {
     return false;
